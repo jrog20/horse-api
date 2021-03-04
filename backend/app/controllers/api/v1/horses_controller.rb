@@ -1,6 +1,6 @@
 class Api::V1::HorsesController < ApplicationController
   def index
-    @horses = Horse.all
+    @horses = Horse.order(:barn_name)
     render json: @horses, status: 200
   end
 
@@ -16,14 +16,16 @@ class Api::V1::HorsesController < ApplicationController
 
   def update
     @horse = Horse.find(params[:id])
-    @horse.update(horse_params)
-    render json: @horse, status: 200
+    if @horse.update(horse_params)
+      render json: @horse, status: 200
+    end
   end
 
   def destroy
     @horse = Horse.find(params[:id])
-    @horse.delete
-    render json: (horseId: @horse.id)
+    if @horse.destroy
+      render json: {horseId: @horse.id}, status: 200
+    end
   end
 
   private
