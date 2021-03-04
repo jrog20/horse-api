@@ -30,7 +30,7 @@ class Api::V1::HorsesController < ApplicationController
 
   private
   def horse_params
-    params.require(:horse).permit(:barn_name, :registered_name, :sire, :dam, :dob, :color, :pattern_type, :pedigree, :photo, :offspring)
+    params.require(:horse).permit(:barn_name, :registered_name, :sire, :dam, :dob, :color, :pattern_type, :pedigree, :registration, :tested, :tobiano_gene, :photo, :offspring)
   end
 
 end
