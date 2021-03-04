@@ -7,8 +7,18 @@ class Horses {
   }
 
   fetchAndLoadHorses() {
-    this.adapter.getHorses().then(horses => {
-      console.log(horses)
+    this.adapter
+    .getHorses()
+    .then(horses => {
+      horses.forEach(horse => this.horses.push(horse))
     })
+    .then(() => {
+      this.render()
+    })
+  }
+
+  render() {
+    const horsesContainer = document.getElementById('horses-container')
+    horsesContainer.innerHTML = 'HI!!!!!'
   }
 }
