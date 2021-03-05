@@ -11,13 +11,23 @@
     <h1>Horse Breeding App</h1>
     <div id="new-horse-container">
       <form id="new-horse-form">
-        <input type="text"/>
-        <input type="submit"/>
+        <input type="text" name="new-horse" id="new-horse">
+        <input type="submit" value="Save horse">
       </form>
-    </div>
-    <div id="horses-container">
+    </div>    
+    <div id="horses-content">
+      <div id="horses-container">
 
+      </div>
+      <div id="horse-show">
+
+      </div>
     </div>
   </div>
+  <script type="text/javascript" src="src/components/horse.js"></script>
+  <script src="src/components/horses.js"></script>
+  <script src="src/components/app.js"></script>
+  <script src="src/adapters/HorsesAdapter.js"></script>
+  <script src="src/index.js"></script>
 </body>
 </html>
