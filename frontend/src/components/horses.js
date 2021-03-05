@@ -2,15 +2,15 @@ class Horses {
   constructor() {
     this.horses = []
     this.adapter = new HorsesAdapter()
-    // this.bindEventListeners()
+    // this.initBindingsAndEventListeners()
     this.fetchAndLoadHorses()
   }
 
   fetchAndLoadHorses() {
-    this.adapter
-    .getHorses()
+    this.adapter.getHorses()
     .then(horses => {
-      horses.forEach(horse => this.horses.push(horse))
+      horses.forEach(horse => this.horses.push(new Horse(horse)))
+      // console.log(this.horses)
     })
     .then(() => {
       this.render()
@@ -19,6 +19,6 @@ class Horses {
 
   render() {
     const horsesContainer = document.getElementById('horses-container')
-    horsesContainer.innerHTML = 'HI!!!!!'
+    horsesContainer.innerHTML = this.horses.map(horse => `<li>${horse.barn_name}</li>`).join('')
   }
 }
