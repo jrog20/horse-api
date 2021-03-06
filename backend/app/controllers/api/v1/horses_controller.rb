@@ -11,7 +11,7 @@ class Api::V1::HorsesController < ApplicationController
 
   def create
     @horse = Horse.create(horse_params)
-    render json :@horse, status: 200
+    render json: @horse, status: 200
   end
 
   def update

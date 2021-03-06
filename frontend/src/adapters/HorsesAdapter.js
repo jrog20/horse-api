@@ -9,15 +9,19 @@ class HorsesAdapter {
   }
 
   createHorse(value) {
-    const horseCreateParams = {
+    const horse = {
+      barn_name: value,
+      // add additional params here?
+    }
+    return fetch(this.baseUrl, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ body })
-    }
-    return fetch(this.baseUrl, horseCreateParams).then(res => res.json())
+      barn_name: JSON.stringify({ horse }),
+    })
   }
+}
   // createHorse(body) {
   //   const horseCreateParams = {
   //     method: "POST",
@@ -28,8 +32,6 @@ class HorsesAdapter {
   //   }
   //   return fetch(this.baseUrl, horseCreateParams).then(res => res.json())
   // }
-
-}
 
  
   // deleteHorse(horseId) {
