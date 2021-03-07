@@ -12,3 +12,8 @@ end
 # ActiveSupport.on_load(:active_record) do
 #   self.include_root_in_json = true
 # end
+
+# Added
+# ActiveSupport.on_load(:active_model_serializers) do
+#   ActiveModel::ArraySerializer.root = false
+# end
