@@ -103,7 +103,6 @@ Horse.create([
     pedigree: 'https://www.allbreedpedigree.com/annie+gota+gun', 
     registration: 'AQHA/APHA', 
     tested: 'N/N HERDA,LWO,PSSM1 - N/GBED, IMM and MYH1 Myopathy N/N, N/SW1 & N/SW2', 
-    tobiano_gene: '', 
     photo: 'https://scontent-bos3-1.xx.fbcdn.net/v/t1.0-0/s600x600/150229122_10225130706633776_4280830010255588534_o.jpg?_nc_cat=111&ccb=3&_nc_sid=0debeb&_nc_ohc=xZAFjI7U4g8AX_1E0ht&_nc_ht=scontent-bos3-1.xx&tp=7&oh=e3a09d7d54207dec8a16a98b99f5d99a&oe=60675F0E' 
   },
   { 
@@ -117,7 +116,6 @@ Horse.create([
     pedigree: 'https://www.allbreedpedigree.com/tinseltowns+razberi', 
     registration: 'AQHA/APHA', 
     tested: '6 panel negative: GBED n/n, HERDA n/n, HYPP n/n, MH n/n, PSSM1 n/n, LWO n/n, IMM and MYH1 Myopathy N/N AA, ee, D/nd2, W20/n, SW1/n', 
-    tobiano_gene: '', 
     photo: 'https://scontent-bos3-1.xx.fbcdn.net/v/t1.0-0/s640x640/148734167_10225130831516898_1306375484119730387_o.jpg?_nc_cat=103&ccb=3&_nc_sid=0debeb&_nc_ohc=Z-zGv7DF9loAX_zxcuX&_nc_ht=scontent-bos3-1.xx&tp=7&oh=23199e2a61d33ca89b37f1aed41c5308&oe=606748B1' 
   },
 ])
