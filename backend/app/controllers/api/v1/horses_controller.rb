@@ -1,6 +1,6 @@
 class Api::V1::HorsesController < ApplicationController
   def index
-    @horses = Horse.order(:barn_name)
+    @horses = Horse.all
     render json: @horses, status: 200
   end
 
