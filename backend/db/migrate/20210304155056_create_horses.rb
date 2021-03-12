@@ -13,7 +13,6 @@ class CreateHorses < ActiveRecord::Migration[6.0]
       t.string :tested
       t.string :tobiano_gene
       t.string :photo
-      t.string :offspring
       t.timestamps
     end
   end
