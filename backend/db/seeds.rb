@@ -6,13 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Horse.create(barn_name: 'Dottie', registered_name: 'Lenas Snow Chex')
-Horse.create(barn_name: 'Christy', registered_name: 'Christys Image')
-Horse.create(barn_name: 'Holly', registered_name: 'Sweet Hollywood Chic')
-Horse.create(barn_name: 'Joy', registered_name: 'SHEZA HOLLYWOODLEGEND')
-Horse.create(barn_name: 'Haley', registered_name: 'GUNNATRASHYA STYLE')
-Horse.create(barn_name: 'Annie', registered_name: 'ANNIE GOTA GUN')
-Horse.create(barn_name: 'Razberi', registered_name: 'Tinseltowns Razberi')
+horses = Horse.create([{ barn_name: 'Dottie', registered_name: 'Lenas Snow Chex' }, { barn_name: 'Christy', registered_name: 'Christys Image' }, { barn_name: 'Holly', registered_name: 'Sweet Hollywood Chic' }, { barn_name: 'Joy', registered_name: 'SHEZA HOLLYWOODLEGEND' }, { barn_name: 'Haley', registered_name: 'GUNNATRASHYA STYLE' }, { barn_name: 'Annie', registered_name: 'ANNIE GOTA GUN' }, { barn_name: 'Razberi', registered_name: 'Tinseltowns Razberi' }])
+
+Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horses.first)
 
 # Horse.create([
 #   { 
