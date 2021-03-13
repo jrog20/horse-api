@@ -3,9 +3,15 @@
 
 
 const url = 'http://localhost:3000/api/v1/horses'
+const horsesContainer = document.getElementById('horses-container')
+
 fetch(url)
 .then(function(res) {
   return res.json()
 }).then(function(horses){
-  console.log(horses[0])
+  for(let horse of horses) {
+    let li = document.createElement('li')
+    li.innerText = horse.barn_name
+    horsesContainer.appendChild(li)
+  }
 })
