@@ -10,10 +10,10 @@ horses = Horse.create([{ barn_name: 'Dottie', registered_name: 'Lenas Snow Chex'
 
 Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horses.first)
 
-# Horse.create([
+# horses = Horse.create([
 #   { 
 #     barn_name: 'Dottie', 
-#     registered_name: 'Lenas Snow Chex'
+#     registered_name: 'Lenas Snow Chex',
 #     # sire: 'Lenas Diamond Chex (Doc O Lena)', 
 #     # dam: 'Q T Easter Lass', 
 #     # dob: '4/6/1999', 
@@ -27,7 +27,7 @@ Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horse
 #   },
 #   { 
 #     barn_name: 'Christy', 
-#     registered_name: 'Christys Image'
+#     registered_name: 'Christys Image',
 #     # sire: 'Mark This Spot', 
 #     # dam: 'Lenas Snow Chex', 
 #     # dob: '5/31/2003', 
@@ -41,7 +41,7 @@ Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horse
 #   },
 #   { 
 #     barn_name: 'Holly', 
-#     registered_name: 'Sweet Hollywood Chic'
+#     registered_name: 'Sweet Hollywood Chic',
 #     # sire: 'The Sweet Spot', 
 #     # dam: 'LS Hollywood Chic', 
 #     # dob: '4/16/2013', 
@@ -55,7 +55,7 @@ Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horse
 #   },
 #   { 
 #     barn_name: 'Joy', 
-#     registered_name: 'SHEZA HOLLYWOODLEGEND'
+#     registered_name: 'SHEZA HOLLYWOODLEGEND',
 #     # sire: 'HEZA HOLLYWOOD LEGEND', 
 #     # dam: 'Lady Quintessa (Don Quintana)', 
 #     # dob: '6/6/2015', 
@@ -69,7 +69,7 @@ Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horse
 #   },
 #   { 
 #     barn_name: 'Haley', 
-#     registered_name: 'GUNNATRASHYA STYLE'
+#     registered_name: 'GUNNATRASHYA STYLE',
 #     # sire: 'Gunnatrashya', 
 #     # dam: 'Christys Image', 
 #     # dob: '4/15/2014', 
@@ -83,7 +83,7 @@ Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horse
 #   },
 #   { 
 #     barn_name: 'Annie', 
-#     registered_name: 'ANNIE GOTA GUN'
+#     registered_name: 'ANNIE GOTA GUN',
 #     # sire: 'Spooks Gotta Whiz', 
 #     # dam: 'Tina Gotta Gun (Colonels Lone Gun X Custom Come)', 
 #     # dob: '4/5/2013', 
@@ -96,7 +96,7 @@ Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horse
 #   },
 #   { 
 #     barn_name: 'Razberi', 
-#     registered_name: 'Tinseltowns Razberi'
+#     registered_name: 'Tinseltowns Razberi',
 #     # sire: 'HollywoodTinseltown', 
 #     # dam: 'Smoking Gypsy Rose (Colonels Smoking Gun X Topsail Whiz)', 
 #     # dob: '2/21/2015', 
@@ -106,5 +106,152 @@ Offspring.create(year: '2006', sex: 'colt', sire: 'Color Me Smart', horse: horse
 #     # registration: 'AQHA/APHA', 
 #     # tested: '6 panel negative: GBED n/n, HERDA n/n, HYPP n/n, MH n/n, PSSM1 n/n, LWO n/n, IMM and MYH1 Myopathy N/N AA, ee, D/nd2, W20/n, SW1/n', 
 #     # photo: 'https://scontent-bos3-1.xx.fbcdn.net/v/t1.0-0/s640x640/148734167_10225130831516898_1306375484119730387_o.jpg?_nc_cat=103&ccb=3&_nc_sid=0debeb&_nc_ohc=Z-zGv7DF9loAX_zxcuX&_nc_ht=scontent-bos3-1.xx&tp=7&oh=23199e2a61d33ca89b37f1aed41c5308&oe=606748B1' 
+#   }
+# ])
+
+# Offspring.create([
+#   { 
+#     year: '2006',
+#     sex: 'colt',
+#     sire: 'Color Me Smart',
+#     horse: horses.first
 #   },
+#   { 
+#     year: '2008',
+#     sex: 'filly',
+#     sire: 'Matt Dillon Dun It',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2009',
+#     sex: 'filly',
+#     sire: 'Comander Riminic',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2010',
+#     sex: 'colt',
+#     sire: 'Colonels Lone Gun',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2011',
+#     sex: 'colt',
+#     sire: 'Gunners Indian',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2012',
+#     sex: 'filly',
+#     sire: 'The Sweet Spot',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2013',
+#     sex: 'filly',
+#     sire: 'The Sweet Spot',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2014',
+#     sex: 'filly',
+#     sire: 'Smoking Whiz',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2015',
+#     sex: 'filly',
+#     sire: 'Heza Hollywood Legend',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2016',
+#     sex: 'colt',
+#     sire: 'Heza Hollywood Legend',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2017',
+#     sex: 'filly',
+#     sire: 'The Sweet Spot',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2018',
+#     sex: 'colt',
+#     sire: 'A Sparkling Vintage',
+#     horse: horses.first
+#   },
+#   { 
+#     year: '2009',
+#     sex: 'colt',
+#     sire: 'Big Chex To Cash-Mark Mark This Chex',
+#     horse: horses.second
+#   },
+#   { 
+#     year: '2011',
+#     sex: 'colt',
+#     sire: 'Spooks Gotta Gun',
+#     horse: horses.second
+#   },
+#   { 
+#     year: '2013',
+#     sex: 'filly',
+#     sire: 'The Big Gun',
+#     horse: horses.second
+#   },
+#   { 
+#     year: '2014',
+#     sex: 'filly',
+#     sire: 'GUNNATRASHYA- Haley in broodmare band',
+#     horse: horses.second
+#   },
+#   { 
+#     year: '2015',
+#     sex: 'colt',
+#     sire: 'Show Me The Buckles',
+#     horse: horses.second
+#   },
+#   { 
+#     year: '2016',
+#     sex: 'colt',
+#     sire: 'Trashadeous',
+#     horse: horses.second
+#   },
+#   { 
+#     year: '2017',
+#     sex: 'colt',
+#     sire: 'Show Me The Buckles',
+#     horse: horses.second
+#   },
+#   { 
+#     year: '2019',
+#     sex: 'colt',
+#     sire: 'Mr Electric Spark',
+#     horse: horses.third
+#   },
+#   { 
+#     year: '2020',
+#     sex: 'filly',
+#     sire: 'Custom Legend',
+#     horse: horses.third
+#   },
+#   { 
+#     year: '2020',
+#     sex: 'filly',
+#     sire: 'Lil Dreaming Magnum',
+#     horse: horses.fourth
+#   },
+#   { 
+#     year: '2020',
+#     sex: 'colt',
+#     sire: 'Gotta Twist It Up',
+#     horse: horses.fifth
+#   },
+#   { 
+#     year: '2020',
+#     sex: 'filly',
+#     sire: 'Late Night Stopper',
+#     horse: horses.last
+#   }
 # ])
