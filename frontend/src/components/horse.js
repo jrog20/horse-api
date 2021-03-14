@@ -15,7 +15,7 @@ class Horse {
     this.id = horseJSON.id
   }
 
-  renderLi() {
+  renderHorse() {
     return `<li>${this.barn_name}</li>`
   }
 }
