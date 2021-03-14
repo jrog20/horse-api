@@ -4,29 +4,29 @@ class Api::V1::HorsesController < ApplicationController
     render json: @horses, status: 200
   end
 
-  # def show
-  #   @horse = Horse.find(params[:id])
-  #   render json: @horse, status: 200
-  # end
+  def show
+    @horse = Horse.find(params[:id])
+    render json: @horse, status: 200
+  end
 
-  # def create
-  #   @horse = Horse.create(horse_params)
-  #   render json: @horse, status: 200
-  # end
+  def create
+    @horse = Horse.create(horse_params)
+    render json: @horse, status: 200
+  end
 
-  # def update
-  #   @horse = Horse.find(params[:id])
-  #   if @horse.update(horse_params)
-  #     render json: @horse, status: 200
-  #   end
-  # end
+  def update
+    @horse = Horse.find(params[:id])
+    if @horse.update(horse_params)
+      render json: @horse, status: 200
+    end
+  end
 
-  # def destroy
-  #   @horse = Horse.find(params[:id])
-  #   if @horse.destroy
-  #     render json: {horseId: @horse.id}, status: 200
-  #   end
-  # end
+  def destroy
+    @horse = Horse.find(params[:id])
+    if @horse.destroy
+      render json: {horseId: @horse.id}, status: 200
+    end
+  end
 
   private
   def horse_params
