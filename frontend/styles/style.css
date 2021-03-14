@@ -2,8 +2,21 @@ body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   line-height: 1.6em;
-  font-size: 1.3em;
+  font-size: 1em;
 }
+
+/* new code */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  border: 1px solid #311212;
+  text-align: center;
+}
+.span-col-2{grid-column: span 2 / auto;}
+
+/* end new code */
 
 a {
    color:#97659;
