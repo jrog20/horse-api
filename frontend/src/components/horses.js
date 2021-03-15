@@ -11,6 +11,15 @@ class Horses {
     this.photo = document.getElementById('photo')
     this.barnName = document.getElementById('barn-name')
     this.registeredName = document.getElementById('registered-name')
+    this.sire = document.getElementById('sire')
+    this.dam = document.getElementById('dam')
+    this.pedigree = document.getElementById('pedigree')
+    this.registration = document.getElementById('registration')
+    this.color = document.getElementById('color')
+    this.patternType = document.getElementById('pattern-type')
+    this.tested = document.getElementById('tested')
+    this.tobianoGene = document.getElementById('tobiano-gene')
+    this.offspring = document.getElementById('offspring')
 
     // this.newBarnName = document.getElementById('new-barn-name')
     // this.horseForm = document.getElementById('new-horse-form')
@@ -35,15 +44,36 @@ class Horses {
   }
 
   render() {
-    // const photo = document.getElementById('photo')
-    const barnName = document.getElementById('barn-name')
-    const registeredName = document.getElementById('registered-name')
 
     // horsesJSON.map(horse => this.horses.push(new Horse(horse)))
 
-    this.photo.innerHTML = this.horses.map(horse => horse.photo)
-    barnName.innerHTML = this.horses.map(horse => `<p>Horse Name:  ${horse.barn_name}</p>`).join('')
-    registeredName.innerHTML = this.horses.map(horse => `<p>Registered Name: ${horse.registered_name}</p>`).join('')
+    // HOW TO GET EACH HORSE INTO A SEPARATE GRID?
+    
+    // Attempt 1:
+    // this.horses.forEach(horse => 
+    //   this.photo.innerHTML = horse.photo, this.barnName.innerHTML = horse.barn_name);
+
+    // Attempt 2: 
+    for(let horse of this.horses) {
+      this.photo.innerHTML = `<img src=${horse.photo}></img>`
+      this.barnName.innerHTML = `Barn Name: ${horse.barn_name}`
+      this.registeredName.innerHTML = `Registered Name: ${horse.registered_name}`
+      this.sire.innerHTML = `Sire: ${horse.sire}`
+      this.dam.innerHTML = `Dam: ${horse.dam}`
+      this.pedigree.innerHTML = `Pedigree: ${horse.pedigree}`
+      this.registration.innerHTML = `Registration: ${horse.registration}`
+      this.color.innerHTML = `Color: ${horse.color}`
+      this.patternType.innerHTML = `Pattern Type: ${horse.pattern_type}`
+      this.tested.innerHTML = `Tested: ${horse.tested}`
+      this.tobianoGene.innerHTML = `Tobiano Gene: ${horse.tobiano_gene}`
+      // Also need to iterate over each offspring here
+      this.offspring.innerHTML = `Offspring: <p>Year: ${horse.offspring.year}</p><p>Sex: ${horse.offspring.sex}</p><p>Sire: ${horse.offspring.sire}</p>`
+    }
+
+
+    // this.photo.innerHTML = this.horses.map(horse => horse.photo)
+    // barnName.innerHTML = this.horses.map(horse => `<p>Horse Name:  ${horse.barn_name}</p>`).join('')
+    // registeredName.innerHTML = this.horses.map(horse => `<p>Registered Name: ${horse.registered_name}</p>`).join('')
   }
 
   horsesHTML() {
