@@ -15,14 +15,10 @@ class Horse {
     this.id = horseJSON.id
   }
 
-  renderHorse() {
-    return `<li>${this.barn_name}</li>`
+  renderHorseImage() {
+    return `<img src=${this.photo}></img>`
   }
 }
-  // render() {
-  //   return `<li>${this.barn_name}</li>`
-  // }
-// }
 
 //   render() {
 //     return `<li data-horseid='${this.id}' data-props='${JSON.stringify(
