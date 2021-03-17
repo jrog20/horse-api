@@ -98,24 +98,24 @@ class Horses {
       // FIX THIS
 
 
-      `<div id="horses-content">`
+      // `<div id="horses-content">`
 
-      `<div class="grid">`
-        `<div class="span-col-2">`
-          `<p id="photo"></p>`
-          `<p id="barn-name"></p>`
-          `<p id="registered-name"></p>`
-        `</div>`
-        `<div id="sire"></div>`
-        `<div id="color"></div>`
-        `<div id="dam"></div>`
-        `<div id="pattern-type"></div>`
-        `<div id="pedigree"></div>`
-        `<div id="tested"></div>`
-        `<div id="registration"></div>`
-        `<div id="tobiano-gene"></div>`
-        `<div class="span-col-2" id="offsprings">Offspring: </div>`
-      `</div>`
+      // `<div class="grid">`
+      //   `<div class="span-col-2">`
+      //     `<p id="photo"></p>`
+      //     `<p id="barn-name"></p>`
+      //     `<p id="registered-name"></p>`
+      //   `</div>`
+      //   `<div id="sire"></div>`
+      //   `<div id="color"></div>`
+      //   `<div id="dam"></div>`
+      //   `<div id="pattern-type"></div>`
+      //   `<div id="pedigree"></div>`
+      //   `<div id="tested"></div>`
+      //   `<div id="registration"></div>`
+      //   `<div id="tobiano-gene"></div>`
+      //   `<div class="span-col-2" id="offsprings">Offspring: </div>`
+      // `</div>`
     }
 
     // this.photo.innerHTML = this.horses.map(horse => horse.photo)
