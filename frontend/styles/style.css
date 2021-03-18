@@ -16,6 +16,9 @@ body {
 }
 .span-col-2{grid-column: span 2 / auto;}
 
+.hide {
+  display: none;
+}
 /* end new code */
 
 a {

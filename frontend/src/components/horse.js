@@ -18,6 +18,16 @@ class Horse {
   renderHorseImage() {
     return `<img src=${this.photo}></img>`
   }
+
+  renderBarnName() {
+    return `Barn Name: ${this.barn_name}`
+  }
+
+  renderLi() {
+    return `<li>${this.barn_name}</li>`
+  }
+
+
 }
 
 //   render() {
