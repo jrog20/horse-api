@@ -23,10 +23,23 @@ class Horses {
     this.tobianoGene = document.getElementsByClassName('tobiano-gene')
     this.offsprings = document.getElementsByClassName('offsprings')
 
-    this.newBarnName = document.getElementById('new-barn-name')
     this.horseForm = document.getElementById('new-horse-form')
     // Bind createHorse to Horses class to make 'this' in createHorse method the Horses class object, rather than just the form.
-    // this.horseForm.addEventListener('submit', this.createHorse.bind(this))
+    this.horseForm.addEventListener('submit', this.createHorse.bind(this))
+
+    this.newBarnName = document.getElementById('new-barn-name')
+    this.newRegisteredName = document.getElementById('new-registered-name')
+    this.newSire = document.getElementById('new-sire')
+    this.newDam = document.getElementById('new-dam')
+    this.newDob = document.getElementById('new-dob')
+    this.newColor = document.getElementById('new-color')
+    this.newPatternType = document.getElementById('new-pattern-type')
+    this.newPedigree = document.getElementById('new-pedigree')
+    this.newRegistration = document.getElementById('new-registration')
+    this.newTested = document.getElementById('new-tested')
+    this.newTobianoGene = document.getElementById('new-tobiano-gene')
+    this.newPhoto = document.getElementById('new-photo')
+
 
     // this.horsesForm.addEventListener('submit', this.handleAddHorse.bind(this))
 
@@ -44,8 +57,6 @@ class Horses {
       this.createGrid()
     })
   }
-
-  // HOW TO GET EACH HORSE INTO A SEPARATE GRID?
 
   createGrid() {
     this.horses.map(horse => {
@@ -69,27 +80,19 @@ class Horses {
       // Also need to iterate over each offspring here
       // this.offsprings.innerHTML = `Offspring: <p>Year: ${horse.offsprings[0].year}</p>`
       // <p>Sex: ${horse.offsprings.sex}</p><p>Sire: ${horse.offsprings.sire}</p>`
-      })
-    }
+    })
+  }
   
+  createHorse(event) {
+    event.preventDefault()
+    // value = 'Sam'
+    // const ?? = this.newBarnName.value
 
-  // createHorse(event) {
-  //   event.preventDefault()
-  //   // value = 'Sam'
-  //   const value = this.newBarnName.value
-
-  //   this.adapter.createHorse(value).then(horse => {
-  //     console.log(horse)
-  //     })
-  //     // debugger
-  //   }
-
-
-
-      // .catch(error => console.log(error))
-        // console.log("Test")
-        // Worked on w/Kyle, still not working:
-        // let horseData = this.horses.map(horse => horse.barn_name)
-        // this.horsesContainer.innerHTML = horseData
-      
+    // this.adapter.createHorse(value).then(horse => {
+      console.log(this)
+      console.log(this.newBarnName.value)
+      console.log(this.newRegisteredName.value)
+      console.log(this.newColor.value)
+    // })
+  }
 }

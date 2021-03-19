@@ -7,18 +7,18 @@ class HorsesAdapter {
   getHorses() {
     return fetch(this.baseUrl).then(res => res.json())
   }
-}
 
-  // createHorse(value) {
-  //   const horseCreateParams = {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify({ value })
-  //   }
-  //   return fetch(this.baseUrl, horseCreateParams).then(res => res.json())
-  // }
+  createHorse(value) {
+    const horseCreateParams = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ value })
+    }
+    return fetch(this.baseUrl, horseCreateParams).then(res => res.json())
+  }
+}
 
   // createHorse(horse_params) {
   //   const horseCreateParams = {
