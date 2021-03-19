@@ -16,6 +16,11 @@ body {
 }
 .span-col-2{grid-column: span 2 / auto;}
 
+img {
+  max-width: 630px;
+  height: auto;
+}
+
 .hide {
   display: none;
 }
