@@ -23,8 +23,40 @@ class Horse {
     return `<strong>Barn Name: </strong>${this.barn_name}`
   }
 
-  renderBarnName() {
-    return `<strong>Barn Name: </strong>${this.barn_name}`
+  renderRegisteredName() {
+    return `<strong>Registered Name: </strong>${this.registered_name}`
+  }
+
+  renderSire() {
+    return `<strong>Sire: </strong>${this.sire}`
+  }
+
+  renderDam() {
+    return `<strong>Dam: </strong>${this.dam}`
+  }
+
+  renderPedigree() {
+    return `<a href="${this.pedigree}">Pedigree</a>`
+  }
+
+  renderRegistration() {
+    return `<strong>Registration: </strong>${this.registration}`
+  }
+
+  renderColor() {
+    return `<strong>Color: </strong>${this.color}`
+  }
+
+  renderPatternType() {
+    return `<strong>Pattern Type: </strong>${this.pattern_type}`
+  }
+
+  renderTested() {
+    return `<strong>Tested: </strong>${this.tested}`
+  }
+
+  renderTobianoGene() {
+    return `<strong>Tobiano Gene: </strong>${this.tobiano_gene}`
   }
 
 }
