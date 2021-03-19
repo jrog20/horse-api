@@ -4,7 +4,6 @@ class Horses {
     this.initBindingsAndEventListeners()
     this.adapter = new HorsesAdapter()
     this.fetchAndLoadHorses()
-    this.horseNameTesting()
   }
 
   initBindingsAndEventListeners() {
@@ -29,9 +28,6 @@ class Horses {
     // Bind createHorse to Horses class to make 'this' in createHorse method the Horses class object, rather than just the form.
     // this.horseForm.addEventListener('submit', this.createHorse.bind(this))
 
-    this.testNewHorse = document.getElementById('test-new-horse')
-
-
     // this.horsesForm.addEventListener('submit', this.handleAddHorse.bind(this))
 
     // this.horseInput = document.getElementById('new-horse-body')
@@ -45,10 +41,9 @@ class Horses {
       horses.forEach(horse => this.horses.push(new Horse(horse)))
     })
     .then(() => {
-      console.log(this.horses.map(horse => horse.barn_name))
-      this.horseNameTesting()
-    }).then(() => {
       this.createGrid()
+    // }).then(() => {
+    //   this.createGrid()
     })
       // .then(this.horsesContainer.innerHTML = this.horses.map(horse => horse.renderLi()).join(''))
   }
@@ -56,29 +51,21 @@ class Horses {
   // HOW TO GET EACH HORSE INTO A SEPARATE GRID?
 
   createGrid() {
-    // How do I create a new Grid here for each horse's data to populate one grid each
-
-    // this.photo.innerHTML = this.horses.map(horse => horse.renderHorseImage())
-    // this.barnName.innerHTML = this.horses.map(horse => horse.renderBarnName())
-
     this.horses.map(horse => {
-    
       let clone = this.grid.cloneNode(true)
       clone.classList.remove('hide')
-      
-      console.log(clone.getElementsByClassName('photo'))
 
       clone.getElementsByClassName('photo')[0].innerHTML = horse.renderHorseImage()
-      // clone.barnName.innerHTML = horse.renderBarnName()
-      // clone.registeredName.innerHTML = `Registered Name: ${horse.registered_name}`
-      // clone.sire.innerHTML = `Sire: ${horse.sire}`
-      // clone.dam.innerHTML = `Dam: ${horse.dam}`
-      // clone.pedigree.innerHTML = `Pedigree: ${horse.pedigree}`
-      // clone.registration.innerHTML = `Registration: ${horse.registration}`
-      // clone.color.innerHTML = `Color: ${horse.color}`
-      // clone.patternType.innerHTML = `Pattern Type: ${horse.pattern_type}`
-      // clone.tested.innerHTML = `Tested: ${horse.tested}`
-      // clone.tobianoGene.innerHTML = `Tobiano Gene: ${horse.tobiano_gene}`
+      clone.getElementsByClassName('barn-name')[0].innerHTML = horse.renderBarnName()
+      clone.getElementsByClassName('registered-name')[0].innerHTML = `Registered Name: ${horse.registered_name}`
+      clone.getElementsByClassName('sire')[0].innerHTML = `Sire: ${horse.sire}`
+      clone.getElementsByClassName('dam')[0].innerHTML = `Dam: ${horse.dam}`
+      clone.getElementsByClassName('pedigree')[0].innerHTML = `Pedigree: ${horse.pedigree}`
+      clone.getElementsByClassName('registration')[0].innerHTML = `Registration: ${horse.registration}`
+      clone.getElementsByClassName('color')[0].innerHTML = `Color: ${horse.color}`
+      clone.getElementsByClassName('pattern-type')[0].innerHTML = `Pattern Type: ${horse.pattern_type}`
+      clone.getElementsByClassName('tested')[0].innerHTML = `Tested: ${horse.tested}`
+      clone.getElementsByClassName('tobiano-gene')[0].innerHTML = `Tobiano Gene: ${horse.tobiano_gene}`
 
       this.horsesContent.append(clone)
 
@@ -87,13 +74,6 @@ class Horses {
       // <p>Sex: ${horse.offsprings.sex}</p><p>Sire: ${horse.offsprings.sire}</p>`
       })
     }
-    
-  horseNameTesting() {
-    // this.testNewHorse.innerHTML = this.horses.map(horse => `<li>${horse.barn_name}</li>`)
-    this.testNewHorse.innerHTML = this.horses.map(horse => horse.renderLi()).join('')
-    console.log(this.testNewHorse.innerHTML)
-  }
-
   
 
   // createHorse(event) {

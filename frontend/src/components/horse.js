@@ -20,13 +20,12 @@ class Horse {
   }
 
   renderBarnName() {
-    return `Barn Name: ${this.barn_name}`
+    return `<strong>Barn Name: </strong>${this.barn_name}`
   }
 
-  renderLi() {
-    return `<li>${this.barn_name}</li>`
+  renderBarnName() {
+    return `<strong>Barn Name: </strong>${this.barn_name}`
   }
-
 
 }
 
