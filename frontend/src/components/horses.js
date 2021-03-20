@@ -104,32 +104,16 @@ class Horses {
     .then(horse => {
       this.horses.push(new Horse(horse))
       
-      // Need to fix render() method
+      // 1. Need to render the newly created horse at the end of current horse list
+      // console.log(this)
       // console.log(horse)
+      // this.render()
       // this.horse.render()
 
-      // Need to clear form fields after submit button is clicked
+      // 2. Need to clear form fields after submit button is clicked
 
     })
   }
 
-  render() {
-    let clone = this.grid.cloneNode(true)
-      clone.classList.remove('hide')
-
-      clone.getElementsByClassName('photo')[0].innerHTML = horse.renderHorseImage()
-      clone.getElementsByClassName('barn-name')[0].innerHTML = horse.renderBarnName()
-      clone.getElementsByClassName('registered-name')[0].innerHTML = horse.renderRegisteredName()
-      clone.getElementsByClassName('sire')[0].innerHTML = horse.renderSire()
-      clone.getElementsByClassName('dam')[0].innerHTML = horse.renderDam()
-      clone.getElementsByClassName('pedigree')[0].innerHTML = horse.renderPedigree()
-      clone.getElementsByClassName('registration')[0].innerHTML = horse.renderRegistration()
-      clone.getElementsByClassName('color')[0].innerHTML = horse.renderColor()
-      clone.getElementsByClassName('pattern-type')[0].innerHTML = horse.renderPatternType()
-      clone.getElementsByClassName('tested')[0].innerHTML = horse.renderTested()
-      clone.getElementsByClassName('tobiano-gene')[0].innerHTML = horse.renderTobianoGene()
-
-      this.horsesContent.append(clone)
-
-  }
+  
 }
