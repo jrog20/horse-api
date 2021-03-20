@@ -36,7 +36,11 @@ class Horse {
   }
 
   renderPedigree() {
-    return `<a href="${this.pedigree}">Pedigree</a>`
+    if (`${this.pedigree}`) {
+      return `<a href="${this.pedigree}">Pedigree</a>`
+    } else {
+      return 'No Pedigree Listed'
+    }
   }
 
   renderRegistration() {
