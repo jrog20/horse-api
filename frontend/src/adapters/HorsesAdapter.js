@@ -8,14 +8,15 @@ class HorsesAdapter {
     return fetch(this.baseUrl).then(res => res.json())
   }
 
-  createHorse(value) {
+  createHorse(horse) {
     const horseCreateParams = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ value })
+      body: JSON.stringify({ horse })
     }
+    // debugger
     return fetch(this.baseUrl, horseCreateParams).then(res => res.json())
   }
 }
