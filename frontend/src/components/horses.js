@@ -40,7 +40,6 @@ class Horses {
     this.newTobianoGene = document.getElementById('new-tobiano-gene')
     this.newPhoto = document.getElementById('new-photo')
 
-
     // this.horsesForm.addEventListener('submit', this.handleAddHorse.bind(this))
 
     // this.horseInput = document.getElementById('new-horse-body')
@@ -60,6 +59,7 @@ class Horses {
 
   createGrid() {
     this.horses.map(horse => {
+
       let clone = this.grid.cloneNode(true)
       clone.classList.remove('hide')
 
@@ -100,20 +100,27 @@ class Horses {
       photo: this.newPhoto.value
     }
 
-    this.adapter.createHorse(horse)
-    .then(horse => {
+    this.adapter.createHorse(horse).then(horse => {
       this.horses.push(new Horse(horse))
-      
-      // 1. Need to render the newly created horse at the end of current horse list
-      // console.log(this)
-      // console.log(horse)
-      // this.render()
-      // this.horse.render()
-
       // 2. Need to clear form fields after submit button is clicked
-
+      this.clearFormFields()
+      // 1. Need to fix createGrid: It is currently duplicating all original seed data when a new horse is created.
+      this.createGrid()
     })
-  }
+  }  
 
-  
+  clearFormFields() {
+    this.newBarnName.value = ''
+    this.newRegisteredName.value = ''
+    this.newSire.value = ''
+    this.newDam.value = ''
+    this.newDob.value = ''
+    this.newColor.value = ''
+    this.newPatternType.value = ''
+    this.newPedigree.value = ''
+    this.newRegistration.value = ''
+    this.newTested.value = ''
+    this.newTobianoGene.value = ''
+    this.newPhoto.value = ''
+  }
 }
