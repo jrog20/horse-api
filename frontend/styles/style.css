@@ -24,6 +24,12 @@ img {
 .hide {
   display: none;
 }
+
+.editable {
+  border: 1px solid salmon;
+  padding: 20px;
+}
+
 /* end new code */
 
 a {

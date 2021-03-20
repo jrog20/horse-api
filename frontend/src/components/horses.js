@@ -26,7 +26,7 @@ class Horses {
     this.horseForm = document.getElementById('new-horse-form')
     // Bind createHorse to Horses class to make 'this' in createHorse method the Horses class object, rather than just the form.
     this.horseForm.addEventListener('submit', this.createHorse.bind(this))
-
+    // Form Fields
     this.newBarnName = document.getElementById('new-barn-name')
     this.newRegisteredName = document.getElementById('new-registered-name')
     this.newSire = document.getElementById('new-sire')
@@ -40,11 +40,16 @@ class Horses {
     this.newTobianoGene = document.getElementById('new-tobiano-gene')
     this.newPhoto = document.getElementById('new-photo')
 
-    // this.horsesForm.addEventListener('submit', this.handleAddHorse.bind(this))
-
-    // this.horseInput = document.getElementById('new-horse-body')
+    // Edit
+    this.horsesContent.addEventListener('dblclick', this.handleEditClick.bind(this))
     // this.horsesNode = document.getElementById('horses-container')
     // this.horsesNode.addEventListener('click',this.handleDeleteHorse.bind(this))
+  }
+
+  handleEditClick(e) {
+    const field = e.target
+    field.contentEditable = true
+    field.classList.add('editable')
   }
   
   fetchAndLoadHorses() {
@@ -102,7 +107,6 @@ class Horses {
 
     this.adapter.createHorse(horse).then(horse => {
       this.horses.push(new Horse(horse))
-      // 2. Need to clear form fields after submit button is clicked
       this.clearFormFields()
       // 1. Need to fix createGrid: It is currently duplicating all original seed data when a new horse is created.
       this.createGrid()
