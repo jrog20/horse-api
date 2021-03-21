@@ -42,6 +42,8 @@ class Horses {
 
     // Edit
     this.horsesContent.addEventListener('dblclick', this.handleEditClick.bind(this))
+    // Reference the parent element to listen for click element
+    this.horsesContainer.addEventListener('blur', this.updateHorse.bind(this), true)
     // this.horsesNode = document.getElementById('horses-container')
     // this.horsesNode.addEventListener('click',this.handleDeleteHorse.bind(this))
   }
@@ -49,9 +51,21 @@ class Horses {
   handleEditClick(e) {
     const field = e.target
     field.contentEditable = true
+    field.focus()
     field.classList.add('editable')
   }
   
+  updateHorse(e) {
+    console.log(e.target)
+    const field = e.target
+    field.contentEditable = false
+    field.classList.remove('editable')
+    const newValue = field.innerHTML
+    const id = field.dataset.id
+    console.log(id)
+    this.adapter.updateHorse(newValue, id)
+  }
+
   fetchAndLoadHorses() {
     this.adapter.getHorses().then(horses => {
       // this.horses = array of 7 horse objects (including offspring)
@@ -88,8 +102,8 @@ class Horses {
     })
   }
 
-  createHorse(event) {
-    event.preventDefault()
+  createHorse(e) {
+    e.preventDefault()
     const horse = {
       barn_name: this.newBarnName.value, 
       registered_name: this.newRegisteredName.value,
@@ -108,7 +122,8 @@ class Horses {
     this.adapter.createHorse(horse).then(horse => {
       this.horses.push(new Horse(horse))
       this.clearFormFields()
-      // 1. Need to fix createGrid: It is currently duplicating all original seed data when a new horse is created.
+      // 1. Need to fix createGrid: It is currently duplicating 
+      // all original seed data when a new horse is created.
       this.createGrid()
     })
   }  

@@ -24,11 +24,11 @@ class Horse {
   }
 
   renderBarnName() {
-    return `<strong>Barn Name: </strong>${this.barn_name}`
+    return `<h4 data-id=${this.id}>Barn Name: ${this.barn_name}</h4>`
   }
 
   renderRegisteredName() {
-    return `<strong>Registered Name: </strong>${this.registered_name}`
+    return `<strong data-id=${this.id}>Registered Name: </strong>${this.registered_name}`
   }
 
   renderSire() {

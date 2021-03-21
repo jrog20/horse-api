@@ -16,22 +16,31 @@ class HorsesAdapter {
       },
       body: JSON.stringify({ horse })
     }
-    // debugger
     return fetch(this.baseUrl, horseCreateParams).then(res => res.json())
   }
-}
 
-  // createHorse(horse_params) {
-  //   const horseCreateParams = {
-  //     method: "POST",
+  updateHorse(horse, id) {
+    const horseUpdateParams = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ horse })
+    }
+    return fetch(`${this.baseUrl}/${id}`, horseUpdateParams).then(res => res.json())
+  }
+
+  // updateHorse(value, id) {
+  //   const horseUpdateParams = {
+  //     method: 'PATCH',
   //     headers: {
-  //       "Content-Type": "application/json"
+  //       'Content-Type': 'application/json'
   //     },
-  //     body: JSON.stringify({ horse_params })
+  //     body: JSON.stringify({ value })
   //   }
-  //   return fetch(this.baseUrl, horseCreateParams).then(res => res.json())
+  //   return fetch(`${this.baseUrl}/${id}`, horseUpdateParams).then(res => res.json())
   // }
-
+}
  
   // deleteHorse(horseId) {
   //   const horseDeleteParams = {
