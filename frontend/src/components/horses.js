@@ -66,13 +66,16 @@ class Horses {
     field.classList.remove('editable')
     const newValue = field.innerHTML
     const id = field.dataset.id
+    const name = field.dataset.field
+    console.log(name)
     console.log(newValue)
     console.log(id)
-    this.adapter.updateHorse(newValue, id)
+    this.adapter.updateHorse(newValue, id, name)
   }
 
   fetchAndLoadHorses() {
     this.adapter.getHorses().then(horses => {
+      console.log(horses)
       // this.horses = array of 7 horse objects (including offspring)
       horses.forEach(horse => this.horses.push(new Horse(horse)))
     })
@@ -83,8 +86,18 @@ class Horses {
 
   createGrid() {
     this.horses.map(horse => {
+      // console.log(horse)
+      this.createSingleHorse(horse)
+      
 
-      let clone = this.grid.cloneNode(true)
+      // Also need to iterate over each offspring here
+      // this.offsprings.innerHTML = `Offspring: <p>Year: ${horse.offsprings[0].year}</p>`
+      // <p>Sex: ${horse.offsprings.sex}</p><p>Sire: ${horse.offsprings.sire}</p>`
+    })
+  }
+
+  createSingleHorse(horse){
+    let clone = this.grid.cloneNode(true)
       clone.classList.remove('hide')
 
       clone.getElementsByClassName('photo')[0].innerHTML = horse.renderHorseImage()
@@ -100,11 +113,6 @@ class Horses {
       clone.getElementsByClassName('tobiano-gene')[0].innerHTML = horse.renderTobianoGene()
 
       this.horsesContent.append(clone)
-
-      // Also need to iterate over each offspring here
-      // this.offsprings.innerHTML = `Offspring: <p>Year: ${horse.offsprings[0].year}</p>`
-      // <p>Sex: ${horse.offsprings.sex}</p><p>Sire: ${horse.offsprings.sire}</p>`
-    })
   }
 
   createHorse(e) {
@@ -125,11 +133,12 @@ class Horses {
     }
 
     this.adapter.createHorse(horse).then(horse => {
-      this.horses.push(new Horse(horse))
+      let newHorse = new Horse(horse)
+      this.horses.push(newHorse)
       this.clearFormFields()
       // 1. Need to fix createGrid: It is currently duplicating 
       // all original seed data when a new horse is created.
-      this.createGrid()
+      this.createSingleHorse(newHorse)
     })
   }  
 
