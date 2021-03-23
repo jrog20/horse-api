@@ -41,20 +41,24 @@ class Horses {
     this.newPhoto = document.getElementById('new-photo')
 
     // Edit
-    this.horsesContent.addEventListener('dblclick', this.handleEditClick.bind(this))
+    this.horsesContent.addEventListener('dblclick', this.handleHorseClick.bind(this))
     // Reference the parent element to listen for click element
     this.horsesContainer.addEventListener('blur', this.updateHorse.bind(this), true)
     // this.horsesNode = document.getElementById('horses-container')
     // this.horsesNode.addEventListener('click',this.handleDeleteHorse.bind(this))
   }
 
-  handleEditClick(e) {
+  handleHorseClick(e) {
+    this.toggleHorse(e)
+  }
+  
+  toggleHorse(e) {
     const field = e.target
     field.contentEditable = true
     field.focus()
     field.classList.add('editable')
   }
-  
+
   updateHorse(e) {
     console.log(e.target)
     const field = e.target
