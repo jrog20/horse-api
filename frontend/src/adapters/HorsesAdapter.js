@@ -19,27 +19,29 @@ class HorsesAdapter {
     return fetch(this.baseUrl, horseCreateParams).then(res => res.json())
   }
 
-  updateHorse(horse, id) {
-    const horseUpdateParams = {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ horse })
-    }
-    return fetch(`${this.baseUrl}/${id}`, horseUpdateParams).then(res => res.json())
-  }
-
-  // updateHorse(value, id) {
+  // updateHorse(body, id) {
   //   const horseUpdateParams = {
   //     method: 'PATCH',
   //     headers: {
   //       'Content-Type': 'application/json'
   //     },
-  //     body: JSON.stringify({ value })
+  //     body: JSON.stringify({ body })
   //   }
   //   return fetch(`${this.baseUrl}/${id}`, horseUpdateParams).then(res => res.json())
   // }
+
+  updateHorse(value, id) {
+    const horse = {
+      barn_name: value,
+    }
+    return fetch(`${this.baseUrl}/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ horse }),
+    }).then(res => res.json())
+  }
 }
  
   // deleteHorse(horseId) {

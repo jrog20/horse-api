@@ -28,7 +28,7 @@ class Horse {
   }
 
   renderRegisteredName() {
-    return `<strong data-id=${this.id}>Registered Name: </strong>${this.registered_name}`
+    return `<h4 data-id=${this.id}>Registered Name: ${this.registered_name}</h4>`
   }
 
   renderSire() {

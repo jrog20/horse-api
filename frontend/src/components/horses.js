@@ -62,6 +62,7 @@ class Horses {
     field.classList.remove('editable')
     const newValue = field.innerHTML
     const id = field.dataset.id
+    console.log(newValue)
     console.log(id)
     this.adapter.updateHorse(newValue, id)
   }
