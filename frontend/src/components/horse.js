@@ -32,11 +32,11 @@ class Horse {
   }
 
   renderSire() {
-    return `<strong>Sire: </strong>${this.sire}`
+    return `<p><strong>Sire: </strong><span data-id=${this.id} data-field="sire">${this.sire}</span></p>`
   }
 
   renderDam() {
-    return `<strong>Dam: </strong>${this.dam}`
+    return `<p><strong>Dam: </strong><span data-id=${this.id} data-field="dam">${this.dam}</span></p>`
   }
 
   renderPedigree() {
@@ -48,23 +48,23 @@ class Horse {
   }
 
   renderRegistration() {
-    return `<strong>Registration: </strong>${this.registration}`
+    return `<p><strong>Registration: </strong><span data-id=${this.id} data-field="registration">${this.registration}</span></p>`
   }
 
   renderColor() {
-    return `<strong>Color: </strong>${this.color}`
+    return `<p><strong>Color: </strong><span data-id=${this.id} data-field="color">${this.color}</span></p>`
   }
 
   renderPatternType() {
-    return `<strong>Pattern Type: </strong>${this.pattern_type}`
+    return `<p><strong>Pattern Type: </strong><span data-id=${this.id} data-field="pattern_type">${this.pattern_type}</span></p>`
   }
 
   renderTested() {
-    return `<strong>Tested: </strong>${this.tested}`
+    return `<p><strong>Tested: </strong><span data-id=${this.id} data-field="tested">${this.tested}</span></p>`
   }
 
   renderTobianoGene() {
-    return `<strong>Tobiano Gene: </strong>${this.tobiano_gene}`
+    return `<p><strong>Tobiano Gene: </strong><span data-id=${this.id} data-field="tobiano_gene">${this.tobiano_gene}</span></p>`
   }
 }
 
@@ -75,4 +75,3 @@ class Horse {
 //       this.body
 //     }</a> <button data-action='edit-horse'>Edit</button> <data-action='delete-horse'></li>`
 //   }
-
