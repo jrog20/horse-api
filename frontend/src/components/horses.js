@@ -24,7 +24,8 @@ class Horses {
     this.offsprings = document.getElementsByClassName('offsprings')
 
     this.horseForm = document.getElementById('new-horse-form')
-    // Bind createHorse to Horses class to make 'this' in createHorse method the Horses class object, rather than just the form.
+    // Bind createHorse to Horses class to make 'this' in createHorse method 
+    // the Horses class object, rather than just the form.
     this.horseForm.addEventListener('submit', this.createHorse.bind(this))
     // Form Fields
     this.newBarnName = document.getElementById('new-barn-name')
@@ -44,6 +45,8 @@ class Horses {
     this.horsesContent.addEventListener('dblclick', this.handleHorseClick.bind(this))
     // Reference the parent element to listen for click element
     this.horsesContainer.addEventListener('blur', this.updateHorse.bind(this), true)
+
+    // Delete
     // this.horsesNode = document.getElementById('horses-container')
     // this.horsesNode.addEventListener('click',this.handleDeleteHorse.bind(this))
   }
@@ -60,22 +63,17 @@ class Horses {
   }
 
   updateHorse(e) {
-    console.log(e.target)
     const field = e.target
     field.contentEditable = false
     field.classList.remove('editable')
     const newValue = field.innerHTML
     const id = field.dataset.id
     const name = field.dataset.field
-    console.log(name)
-    console.log(newValue)
-    console.log(id)
     this.adapter.updateHorse(newValue, id, name)
   }
 
   fetchAndLoadHorses() {
     this.adapter.getHorses().then(horses => {
-      console.log(horses)
       // this.horses = array of 7 horse objects (including offspring)
       horses.forEach(horse => this.horses.push(new Horse(horse)))
     })
@@ -86,10 +84,8 @@ class Horses {
 
   createGrid() {
     this.horses.map(horse => {
-      // console.log(horse)
       this.createSingleHorse(horse)
       
-
       // Also need to iterate over each offspring here
       // this.offsprings.innerHTML = `Offspring: <p>Year: ${horse.offsprings[0].year}</p>`
       // <p>Sex: ${horse.offsprings.sex}</p><p>Sire: ${horse.offsprings.sire}</p>`
@@ -136,8 +132,6 @@ class Horses {
       let newHorse = new Horse(horse)
       this.horses.push(newHorse)
       this.clearFormFields()
-      // 1. Need to fix createGrid: It is currently duplicating 
-      // all original seed data when a new horse is created.
       this.createSingleHorse(newHorse)
     })
   }  
