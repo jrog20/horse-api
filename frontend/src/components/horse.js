@@ -66,6 +66,10 @@ class Horse {
   renderTobianoGene() {
     return `<p><strong>Tobiano Gene: </strong><span data-id=${this.id} data-field="tobiano_gene">${this.tobiano_gene}</span></p>`
   }
+
+  renderDeleteHorse() {
+    return this.id
+  }
 }
 
 //   render() {

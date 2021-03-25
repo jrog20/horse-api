@@ -44,11 +44,14 @@ class Horses {
     // Edit
     this.horsesContent.addEventListener('dblclick', this.handleHorseClick.bind(this))
     // Reference the parent element to listen for click element
-    this.horsesContainer.addEventListener('blur', this.updateHorse.bind(this), true)
+    this.horsesContent.addEventListener('blur', this.updateHorse.bind(this), true)
 
     // Delete
-    // this.horsesNode = document.getElementById('horses-container')
-    // this.horsesNode.addEventListener('click',this.handleDeleteHorse.bind(this))
+    this.delete = document.body.getElementsByClassName('delete-horse')
+    console.log(this.delete)
+    for (const del of this.delete) {   
+      del.addEventListener('click', this.handleDeleteHorse.bind(this))
+    }
   }
 
   handleHorseClick(e) {
@@ -70,6 +73,11 @@ class Horses {
     const id = field.dataset.id
     const name = field.dataset.field
     this.adapter.updateHorse(newValue, id, name)
+  }
+
+  handleDeleteHorse() {
+    console.log(this.id)
+    this.adapter.deleteHorse(this.id)
   }
 
   fetchAndLoadHorses() {
@@ -109,6 +117,11 @@ class Horses {
       clone.getElementsByClassName('tobiano-gene')[0].innerHTML = horse.renderTobianoGene()
 
       this.horsesContent.append(clone)
+
+      document.getElementsByClassName('delete-horse')[0].setAttribute('data-id', horse.renderDeleteHorse())
+      let deleteEl = document.getElementsByClassName('delete-horse')[0].cloneNode(true)
+      this.horsesContent.append(deleteEl)
+      
   }
 
   createHorse(e) {
