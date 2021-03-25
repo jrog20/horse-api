@@ -3,7 +3,7 @@ body {
   font-weight: 300;
   line-height: 1.6em;
   font-size: 1em;
-  background-color: green;
+  background-color: rgb(88, 175, 88);
 }
 
 /* new code */
@@ -35,7 +35,7 @@ img {
 /* end new code */
 
 a {
-   color:#97659;
+   color: #97659;
   }
 
 input {
