@@ -44,14 +44,15 @@ class Horses {
     // Edit
     this.horsesContent.addEventListener('dblclick', this.handleHorseClick.bind(this))
     // Reference the parent element to listen for click element
-    this.horsesContent.addEventListener('blur', this.updateHorse.bind(this), true)
+    this.horsesContainer.addEventListener('blur', this.updateHorse.bind(this), true)
 
     // Delete
-    this.delete = document.body.getElementsByClassName('delete-horse')
-    console.log(this.delete)
-    for (const del of this.delete) {   
-      del.addEventListener('click', this.handleDeleteHorse.bind(this))
-    }
+    // this.delete = document.getElementsByClassName('delete-horse')
+    // this.delete.addEventListener('click', this.handleDeleteHorse.bind(this))
+    // console.log(this.delete)
+    // for (const del of this.delete) {   
+      // console.log(del)
+    // }
   }
 
   handleHorseClick(e) {
@@ -76,7 +77,7 @@ class Horses {
   }
 
   handleDeleteHorse() {
-    console.log(this.id)
+    // console.log(this.id)
     this.adapter.deleteHorse(this.id)
   }
 
@@ -118,9 +119,11 @@ class Horses {
 
       this.horsesContent.append(clone)
 
-      document.getElementsByClassName('delete-horse')[0].setAttribute('data-id', horse.renderDeleteHorse())
-      let deleteEl = document.getElementsByClassName('delete-horse')[0].cloneNode(true)
-      this.horsesContent.append(deleteEl)
+      // let test = document.getElementsByClassName('delete-horse')[0].setAttribute('data-id', horse.renderHorseId())
+      // console.log(test)
+      // let deleteEl = document.getElementsByClassName('delete-horse')[0].cloneNode(true)
+      // // CAN THIS APPEND TO HORSESCONTAINER? 
+      // this.horsesContent.append(deleteEl)
       
   }
 
