@@ -42,13 +42,29 @@ class Horses {
     this.newPhoto = document.getElementById('new-photo')
 
     // Edit
-    this.horsesContent.addEventListener('dblclick', this.handleHorseClick.bind(this))
+    // this.horsesContent.addEventListener('dblclick', this.handleHorseClick.bind(this))
     // Reference the parent element to listen for click element
     this.horsesContainer.addEventListener('blur', this.updateHorse.bind(this), true)
 
-    // Delete
+    var clickableFields = document.getElementsByClassName('clickable')
+    // this.clickable.addEventListener('dblclick', this.handleHorseClick.bind(this))
+    console.log(this.clickable)
+    
+    // for (var i = 0; i < this.clickable.length; i++) {
+    //   this.clickable[i].addEventListener('dblclick', this.handleHorseClick.bind(this), false);
+    // }
+
+    Array.from(clickableFields).forEach(function(clickableField) {
+      console.log(clickableField)
+      clickableField.addEventListener('dblclick', this.handleHorseClick.bind(this));
+    });
+
+    // Delete - use splice!
     // this.delete = document.getElementsByClassName('delete-horse')
+  
     // this.delete.addEventListener('click', this.handleDeleteHorse.bind(this))
+
+    
     // console.log(this.delete)
     // for (const del of this.delete) {   
       // console.log(del)
