@@ -7,6 +7,7 @@ class Horses {
   }
 
   initBindingsAndEventListeners() {
+    // Horse Fields
     this.horsesContainer = document.getElementById('horses-container')
     this.horsesContent = document.getElementById('horses-content')
     this.grid = document.getElementsByClassName('grid')[document.getElementsByClassName('grid').length-1]
@@ -21,7 +22,11 @@ class Horses {
     this.patternType = document.getElementsByClassName('pattern-type')
     this.tested = document.getElementsByClassName('tested')
     this.tobianoGene = document.getElementsByClassName('tobiano-gene')
+    // Offspring Fields
     this.offsprings = document.getElementsByClassName('offsprings')
+    this.offspringYear = document.getElementsByClassName('offspring-year')
+    this.offspringSex = document.getElementsByClassName('offspring-sex')
+    this.offspringSire = document.getElementsByClassName('offspring-sire')
     // Form
     this.horseForm = document.getElementById('new-horse-form')
     // Bind createHorse to Horses class to make 'this' in createHorse method 
@@ -102,6 +107,9 @@ class Horses {
       clone.getElementsByClassName('pattern-type')[0].innerHTML = horse.renderPatternType()
       clone.getElementsByClassName('tested')[0].innerHTML = horse.renderTested()
       clone.getElementsByClassName('tobiano-gene')[0].innerHTML = horse.renderTobianoGene()
+
+      // Testing offspring
+      clone.getElementsByClassName('offspring-year')[0].innerHTML = horse.renderOffspringYear()
 
       this.horsesContent.append(clone)      
   }

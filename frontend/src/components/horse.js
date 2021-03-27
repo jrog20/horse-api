@@ -70,4 +70,9 @@ class Horse {
   renderHorseId() {
     return this.id
   }
+
+  renderOffspringYear() {
+    console.log(this.id)
+    return `<p><strong>Year: </strong><span data-id=${this.id} data-field="year">${this.year}</span></p>`
+  }
 }
