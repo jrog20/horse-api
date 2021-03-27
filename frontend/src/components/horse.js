@@ -13,6 +13,7 @@ class Horse {
     this.tobiano_gene = horseJSON.tobiano_gene
     this.photo = horseJSON.photo
     this.id = horseJSON.id
+    this.offsprings = horseJSON.offsprings
   }
 
   renderHorseImage() {
@@ -71,8 +72,29 @@ class Horse {
     return this.id
   }
 
+
   renderOffspringYear() {
-    console.log(this.id)
-    return `<p><strong>Year: </strong><span data-id=${this.id} data-field="year">${this.year}</span></p>`
+    // console.log(`${this.offsprings[0].year}`)
+    if (`${this.offsprings[0].year}`) {
+      return `<p><strong>Year: </strong><span data-id=${this.id} data-field="year">${this.offsprings[0].year}</span></p>`
+    } else {
+      return 'none'
+    }
+  }
+
+  renderOffspringSex() {
+    if (`${this.offsprings[0].sex}`) {
+      return `<p><strong>Sex: </strong><span data-id=${this.id} data-field="sex">${this.offsprings[0].sex}</span></p>` || undefined
+    } else {
+      return ''
+    }
+  }
+
+  renderOffspringSire() {
+    if (`${this.offsprings[0].sire}`) {
+      return `<p><strong>Sire: </strong><span data-id=${this.id} data-field="sire">${this.offsprings[0].sire}</span></p>` || undefined
+    } else {
+      return ''
+    }
   }
 }

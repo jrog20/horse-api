@@ -109,7 +109,14 @@ class Horses {
       clone.getElementsByClassName('tobiano-gene')[0].innerHTML = horse.renderTobianoGene()
 
       // Testing offspring
-      clone.getElementsByClassName('offspring-year')[0].innerHTML = horse.renderOffspringYear()
+      // console.log(clone.getElementsByClassName('offspring-year')[0])
+      // console.log(horse.renderOffspringYear())
+      console.log(horse.offsprings)
+      for(let offspring in horse.offsprings) {
+        clone.getElementsByClassName('offspring-year')[0].innerHTML = horse.renderOffspringYear()
+        clone.getElementsByClassName('offspring-sex')[0].innerHTML = horse.renderOffspringSex()
+        clone.getElementsByClassName('offspring-sire')[0].innerHTML = horse.renderOffspringSire()
+      } 
 
       this.horsesContent.append(clone)      
   }
@@ -133,6 +140,7 @@ class Horses {
 
     this.adapter.createHorse(horse).then(horse => {
       let newHorse = new Horse(horse)
+      console.log(newHorse)
       this.horses.push(newHorse)
       this.clearFormFields()
       this.createSingleHorse(newHorse)
