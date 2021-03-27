@@ -30,6 +30,6 @@ class OffspringsController < ApplicationController
 
   private
   def offspring_params
-    params.require(:offspring).permit(:year, :sex, :sire)
+    params.require(:offspring).permit(:year, :sex, :sire, :horse_id)
   end
 end
