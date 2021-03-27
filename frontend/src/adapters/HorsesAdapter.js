@@ -30,18 +30,4 @@ class HorsesAdapter {
       body: JSON.stringify({ horse }),
     }).then(res => res.json())
   }
-
-  deleteHorse(horseId) {
-    const horseDeleteParams = {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }
-    return fetch(`${this.baseUrl}/${horseId}`, horseDeleteParams).then(res =>
-      res.json()
-    )
-  }
 }
- 
-

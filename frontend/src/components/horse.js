@@ -71,11 +71,3 @@ class Horse {
     return this.id
   }
 }
-
-//   render() {
-//     return `<li data-horseid='${this.id}' data-props='${JSON.stringify(
-//       this
-//     )}' class='horse-element'><a class="show-link" href='#'>${
-//       this.body
-//     }</a> <button data-action='edit-horse'>Edit</button> <data-action='delete-horse'></li>`
-//   }
