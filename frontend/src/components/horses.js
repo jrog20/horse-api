@@ -23,7 +23,7 @@ class Horses {
     this.tested = document.getElementsByClassName('tested')
     this.tobianoGene = document.getElementsByClassName('tobiano-gene')
     // Offspring Fields
-    this.offsprings = document.getElementsByClassName('offsprings')
+    this.offspringContainer = document.getElementsByClassName('offspring-container')
     this.offspringYear = document.getElementsByClassName('offspring-year')
     this.offspringSex = document.getElementsByClassName('offspring-sex')
     this.offspringSire = document.getElementsByClassName('offspring-sire')
@@ -33,6 +33,7 @@ class Horses {
     // the Horses class object, rather than just the form.
     this.horseForm.addEventListener('submit', this.createHorse.bind(this))
     // Form Fields
+    let newHorseContainer = document.getElementById('new-horse-container')
     this.newBarnName = document.getElementById('new-barn-name')
     this.newRegisteredName = document.getElementById('new-registered-name')
     this.newSire = document.getElementById('new-sire')
@@ -49,6 +50,18 @@ class Horses {
     this.horsesContent.addEventListener('dblclick', this.handleHorseClick.bind(this))
     // Reference the parent element to listen for click element
     this.horsesContainer.addEventListener('blur', this.updateHorse.bind(this), true)
+    // Show horse form button
+    this.newHorseButton = document.getElementById('new-horse-button')
+    this.newHorseButton.addEventListener('click', function(){
+      console.log(newHorseContainer.style.display)
+      if(newHorseContainer.style.display == 'none' || newHorseContainer.style.display == '') {
+        newHorseContainer.style.display = 'block'
+        this.innerText = 'Hide new horse form'
+      } else {
+        newHorseContainer.style.display = 'none'
+        this.innerText = 'Add new Horse'
+      }
+    })
   }
 
   handleHorseClick(e) {
@@ -85,10 +98,6 @@ class Horses {
   createGrid() {
     this.horses.map(horse => {
       this.createSingleHorse(horse)
-      
-      // Also need to iterate over each offspring here
-      // this.offsprings.innerHTML = `Offspring: <p>Year: ${horse.offsprings[0].year}</p>`
-      // <p>Sex: ${horse.offsprings.sex}</p><p>Sire: ${horse.offsprings.sire}</p>`
     })
   }
 
@@ -108,16 +117,21 @@ class Horses {
       clone.getElementsByClassName('tested')[0].innerHTML = horse.renderTested()
       clone.getElementsByClassName('tobiano-gene')[0].innerHTML = horse.renderTobianoGene()
 
-      // Testing offspring
-      // console.log(clone.getElementsByClassName('offspring-year')[0])
-      // console.log(horse.renderOffspringYear())
-      console.log(horse.offsprings)
-      for(let offspring in horse.offsprings) {
-        clone.getElementsByClassName('offspring-year')[0].innerHTML = horse.renderOffspringYear()
-        clone.getElementsByClassName('offspring-sex')[0].innerHTML = horse.renderOffspringSex()
-        clone.getElementsByClassName('offspring-sire')[0].innerHTML = horse.renderOffspringSire()
-      } 
+      let data = ''
 
+      if (horse.offsprings.length != 0) {
+        for(let offspring in horse.offsprings) {
+          data += `<p>`
+          data += `<span class="offspring-year"><strong>Year: </strong>${horse.offsprings[offspring].year} </span>`
+          data += `<span class="offspring-sex"><strong>Sex: </strong>${horse.offsprings[offspring].sex} </span>`
+          data += `<span class="offspring-sire"><strong>Sire: </strong>${horse.offsprings[offspring].sire}</span>`
+          data += `</p>`
+        } 
+      } else {
+        data = `<p>None</p>`
+      }
+
+      clone.getElementsByClassName('offspring-container')[0].innerHTML = data
       this.horsesContent.append(clone)      
   }
 
