@@ -6,8 +6,6 @@ body {
   background-color: rgb(88, 175, 88);
 }
 
-/* new code */
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -23,6 +21,26 @@ img {
   height: auto;
 }
 
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.center {
+  text-align: center;
+  border: 3px solid rgb(15, 65, 15);
+  padding: 2%;
+  font-size: 1.5em;
+}
+
+#new-horse-button {
+  text-align: center;
+  border: 3px solid rgb(26, 85, 26);
+  font-size: 1em;
+}
+
 .hide, #new-horse-container {
   display: none;
 }
@@ -31,8 +49,6 @@ img {
   border: 1px solid salmon;
   padding: 20px;
 }
-
-/* end new code */
 
 a {
    color: #97659;
@@ -50,8 +66,4 @@ input {
 
 ul {
  padding-left: 20px;
-}
-
-.delete-horse-link {
- color:red;
 }
