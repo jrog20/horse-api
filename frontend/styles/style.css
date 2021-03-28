@@ -23,7 +23,7 @@ img {
   height: auto;
 }
 
-.hide {
+.hide, #new-horse-container {
   display: none;
 }
 
