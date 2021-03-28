@@ -71,30 +71,4 @@ class Horse {
   renderHorseId() {
     return this.id
   }
-
-
-  renderOffspringYear() {
-    // console.log(`${this.offsprings[0].year}`)
-    if (`${this.offsprings[0].year}`) {
-      return `<p><strong>Year: </strong><span data-id=${this.id} data-field="year">${this.offsprings[0].year}</span></p>`
-    } else {
-      return 'none'
-    }
-  }
-
-  renderOffspringSex() {
-    if (`${this.offsprings[0].sex}`) {
-      return `<p><strong>Sex: </strong><span data-id=${this.id} data-field="sex">${this.offsprings[0].sex}</span></p>` || undefined
-    } else {
-      return ''
-    }
-  }
-
-  renderOffspringSire() {
-    if (`${this.offsprings[0].sire}`) {
-      return `<p><strong>Sire: </strong><span data-id=${this.id} data-field="sire">${this.offsprings[0].sire}</span></p>` || undefined
-    } else {
-      return ''
-    }
-  }
 }
