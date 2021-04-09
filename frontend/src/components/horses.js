@@ -7,6 +7,9 @@ class Horses {
   }
 
   initBindingsAndEventListeners() {
+    this.darkMode = document.getElementById('dark-mode');
+    this.darkMode.addEventListener('click', this.darkModeClick.bind(this));
+
     // Horse Fields
     this.horsesContainer = document.getElementById('horses-container');
     this.horsesContent = document.getElementById('horses-content');
@@ -62,6 +65,14 @@ class Horses {
         this.innerText = 'Add new Horse';
       }
     })
+  }
+
+  darkModeClick() {
+    if(document.body.style.backgroundColor == 'rgb(88, 175, 88)') {
+      document.body.style.backgroundColor = 'grey'
+    } else {
+      document.body.style.backgroundColor = 'rgb(88, 175, 88)'
+    }
   }
 
   handleHorseClick(e) {
